@@ -40,9 +40,7 @@ class TrafficLight:
             __time = i[0]
             __color = (i[1], i[2], i[3])
             print(f"\b" * 10, end="")
-            print(f"\033[4{__color[0]}m   ", end="")
-            print(f"\033[4{__color[1]}m   ", end="")
-            print(f"\033[4{__color[2]}m   ", end="")
+            print(f"\033[4{__color[0]}m   \033[4{__color[1]}m   \033[4{__color[2]}m   ", end="")
             sleep(__time)
 
 
@@ -56,4 +54,3 @@ if __name__ == '__main__':
 
     svetofor = TrafficLight(False, "green", 10)
     svetofor.running()
-

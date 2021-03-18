@@ -10,3 +10,31 @@
  атрибутов, вызвать методы экземпляров.
 """
 
+
+class Worker:
+
+    def __init__(self, n, sname, pos, wage, bonus):
+        self.name = n
+        self.surname = sname
+        self.position = pos
+        self._income = {"wage": wage, "bonus": bonus}
+
+
+class Position(Worker):
+    def __init__(self, n, sname, pos, wage, bonus):
+        super().__init__(n, sname, pos, wage, bonus)
+
+    def get_full_name(self):
+        return f"{self.name} {self.surname}"
+
+    def get_total_income(self):
+        return self._income['wage'] + self._income['bonus']
+
+
+workers = list()
+workers.append(Position("Ivan", "Ivanov", "Engineer", 1500, 500))
+workers.append(Position("Petr", "Popov", "Manager", 1000, 400))
+workers.append(Position("Sergey", "Sidorov", "Director", 2000, 600))
+
+for w in workers:
+    print(f"{w.get_full_name()}. Position: {w.position}. Income: {w.get_total_income()}")

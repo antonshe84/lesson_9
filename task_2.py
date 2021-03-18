@@ -10,7 +10,7 @@
 Например: 20 м*5000 м*25 кг*5 см = 12500 т.
 """
 
-mass_1m = 25
+mass_1m = 25    # вес одного квадратного метра асфальта
 
 
 class Road:
@@ -19,7 +19,7 @@ class Road:
         self._width = width
         self._depth = 5
 
-    def set_depth(self, depth):
+    def set_depth(self, depth):     # задание толщины слоя
         self._depth = depth
 
     def mass(self):
